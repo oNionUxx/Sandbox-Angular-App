@@ -3,49 +3,48 @@ import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { User } from '../../models/User';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
   users: User[];
 
   constructor() {
-    this.users = [ 
+    this.users = [
       {
-        firstName: 'John',
-        lastName: 'Doe',
-        email: 'johndoe@gmail.com',
+        firstName: 'Omer',
+        lastName: 'Lubko',
+        email: 'omerlubko@gmail.com',
         isActive: true,
         registered: new Date('01/02/2018 08:30:00'),
-        hide: true
+        hide: true,
       },
 
       {
-        firstName: 'Kevin',
-        lastName: 'Johnson',
-        email: 'kevinjohnson@yahoo.com',
+        firstName: 'Tomer',
+        lastName: 'Givati',
+        email: 'tomer1991@yahoo.com',
         isActive: false,
         registered: new Date('03/11/2017 06:20:00'),
-        hide: true
+        hide: true,
       },
 
       {
-        firstName: 'Karen',
-        lastName: 'Williams',
-        email: 'karenwilliams@hotmail.com',
+        firstName: 'Zach',
+        lastName: 'Barak',
+        email: 'zachb2@hotmail.com',
         isActive: true,
         registered: new Date('11/02/2016 10:30:00'),
-        hide: true
-      }
+        hide: true,
+      },
     ];
-   }
+  }
 
-   getUsers(): Observable<User[]> {
-     return of(this.users);
-   }
+  getUsers(): Observable<User[]> {
+    return of(this.users);
+  }
 
-   addUser(user: User) {
-     this.users.unshift(user);
-   }
+  addUser(user: User) {
+    this.users.unshift(user);
+  }
 }

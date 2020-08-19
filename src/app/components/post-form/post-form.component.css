@@ -1,0 +1,10 @@
+.post-headers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inner-post-header {
+    display: flex;
+    align-items: center;
+}

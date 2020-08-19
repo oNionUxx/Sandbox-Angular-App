@@ -1,4 +1,20 @@
-<h2>Add Post</h2>
+<div class="post-headers">
+  <h2>Add Post</h2>
+  <div class="inner-post-header">
+    <h6 class="mr-3">Display Post Entries</h6>
+    <select
+      class="input-large input-large-altered"
+      ng-model="sample"
+      (click)="showPostEntries($event)"
+    >
+      <option value="1">1</option>
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="20">20</option>
+      <option value="50">50</option>
+    </select>
+  </div>
+</div>
 <div class="card card-body mb-3">
   <form>
     <div class="form-group">

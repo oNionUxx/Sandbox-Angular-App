@@ -8,10 +8,13 @@ import { Post } from '../../models/Post';
   styleUrls: ['./post-form.component.css'],
 })
 export class PostFormComponent implements OnInit {
+  @Input() posts: Post[];
   @Input() currentPost: Post;
   @Input() isEdit: boolean;
+
   @Output() newPost: EventEmitter<Post> = new EventEmitter();
   @Output() updatedPost: EventEmitter<Post> = new EventEmitter();
+  @Output() limitPosts: EventEmitter<Post[]> = new EventEmitter();
 
   constructor(private postService: PostService) {}
 
@@ -33,5 +36,16 @@ export class PostFormComponent implements OnInit {
       this.isEdit = false;
       this.updatedPost.emit(post);
     });
+  }
+
+  showPostEntries(e) {
+    if (e.target.value != undefined) {
+      this.postService
+        .displayPostsEntries(e.target.value)
+        .subscribe((posts) => {
+          this.posts = posts;
+          this.limitPosts.emit(posts);
+        });
+    }
   }
 }
