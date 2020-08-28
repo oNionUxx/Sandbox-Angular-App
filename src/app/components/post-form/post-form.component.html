@@ -1,12 +1,13 @@
 <div class="post-headers">
   <h2>Add Post</h2>
   <div class="inner-post-header">
-    <h6 class="mr-3 mt-3 mb-3 ml-3">Display Post Entries</h6>
+    <h6 style="margin: auto" class="mr-3">Display Post Entries</h6>
     <select
       class="input-large input-large-altered"
       ng-model="sample"
       (change)="showPostEntries($event)"
     >
+      <option value="0">Choose...</option>
       <option value="1">1</option>
       <option value="5">5</option>
       <option value="10">10</option>
