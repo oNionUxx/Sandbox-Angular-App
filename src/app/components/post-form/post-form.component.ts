@@ -39,6 +39,7 @@ export class PostFormComponent implements OnInit {
   }
 
   showPostEntries(e) {
+    console.log(e.target.value);
     if (e.target.value != undefined) {
       this.postService
         .displayPostsEntries(e.target.value)
